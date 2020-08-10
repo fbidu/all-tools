@@ -7,26 +7,18 @@ jobs:
     name: poetry
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-python@v1
-      with:
-        python-version: 3.8
-    - uses: Gr1N/setup-poetry@v2
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - uses: Gr1N/setup-poetry@v2
 
-    - name: Install
-      run: install
-    # - name: Pytest
-    #   uses: abatilo/actions-poetry@v1.5.0
-    #   with:
-    #     python_version: 3.8.0
-    #     poetry_version: 1.0
-    #     args: run python -m pytest
-    # - name: Black
-    #   uses: abatilo/actions-poetry@v1.5.0
-    #   with:
-    #     python_version: 3.8.0
-    #     poetry_version: 1.0
-    #     args: run black all_tools
+      - name: Install
+        run: poetry install
+      - name: Pytest
+        run: poetry run python -m pytest
+      - name: Black
+        run: poetry run black all_tools
     # - name: Vulture
     #   uses: abatilo/actions-poetry@v1.5.0
     #   with:
