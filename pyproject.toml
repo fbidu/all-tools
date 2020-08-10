@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "all-tools"
+version = "0.1.0"
+description = "A repo to plug _all_ python related code tools I can find"
+authors = ["Felipe 'Bidu' Rodrigues <felipe@felipevr.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = {version = "^5.3"}
+pre-commit = {version = "^2.0"}
+black = {version = "^19.10-beta.0", allow-prereleases = true}
+pylint = "^2.4"
+ipython = "^7.13"
+pytest-cov = "^2.10.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
