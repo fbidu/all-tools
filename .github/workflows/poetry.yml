@@ -1,0 +1,35 @@
+# Workflow for running things with poetry - without docker
+name: Poetry
+on: push
+
+jobs:
+  pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.0
+        poetry_version: 1.0
+        args: install
+    - name: Pytest
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.0
+        poetry_version: 1.0
+        args: run python -m pytest
+    - name: Black
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.0
+        poetry_version: 1.0
+        args: run black all_tools
+    - name: Vulture
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.0
+        poetry_version: 1.0
+        working_directory: ./working_dir
+        args: run vulture all_tools
