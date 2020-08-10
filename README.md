@@ -16,3 +16,15 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 
 * **pytest** ― Executed on pre-push
 * **pytest-cov** ― Executed on pre-push with Pytest
+
+### Static Analyzers
+
+* **Vulture** ― Detects dead code. Runs on CI
+
+### To Be Add
+
+* Pyre
+* Mypy
+* Pysa
+* Flake8
+* Hypothesis
