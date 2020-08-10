@@ -63,7 +63,7 @@ COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 
 # quicker install as runtime deps are already installed
 RUN poetry install
-
+COPY . /app/
 # will become mountpoint of our code
 WORKDIR /app
 
