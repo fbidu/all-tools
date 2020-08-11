@@ -16,6 +16,7 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 
 * **pytest** ― Executed on pre-push
 * **pytest-cov** ― Executed on pre-push with Pytest
+* **hypothesis** ― Finally got around trying this! Really neat.
 
 ### Static Analyzers
 
@@ -28,3 +29,6 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 * Pysa
 * Flake8
 * Hypothesis
+* Pytest Mock
+* Logassert
+* Rich (?)

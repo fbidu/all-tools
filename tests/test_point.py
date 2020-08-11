@@ -1,6 +1,9 @@
 """
 Unit tests for a 3D point class
 """
+import hypothesis.strategies as st
+import hypothesis
+
 from all_tools.point import Point
 
 # pylint:disable=invalid-name
@@ -73,3 +76,51 @@ def test_iterable_point():
     point = Point(x=1, y=2, z=3)
     x, y, z = point
     assert (x, y, z) == (1, 2, 3)
+
+
+@hypothesis.settings(verbosity=hypothesis.Verbosity.verbose)
+@hypothesis.given(st.tuples(st.floats(), st.floats(), st.floats()))
+def test_properties_init(p):
+    """
+    Can we initialize a bunch of points?
+    """
+    point = Point(*p)
+    assert point
+
+
+@hypothesis.given(
+    st.builds(
+        Point,
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+    ),
+    st.builds(
+        Point,
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+    ),
+)
+def test_commutative_sum(p_1, p_2):
+    """
+    Is the sum of point commutative?
+    """
+    assert p_1 + p_2 == p_2 + p_1
+
+
+@hypothesis.given(
+    st.builds(
+        Point,
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+        st.floats(allow_nan=False, allow_infinity=False),
+    ),
+    st.floats(allow_nan=False, allow_infinity=False),
+)
+def test_scaling(p, x):
+    """
+    Can we multiply a point by a scalar?
+    """
+    p_2 = p * x
+    assert (p_2.x, p_2.y, p_2.z) == (p.x * x, p.y * x, p.z * x)
