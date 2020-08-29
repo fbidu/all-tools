@@ -30,3 +30,6 @@ jobs:
           poetry run pylint all_tools \
           --output-format=colorized \
           --reports=y
+      - name: Wily
+        run: |
+          poetry run wily diff src/ -r HEAD^1
