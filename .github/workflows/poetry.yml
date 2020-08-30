@@ -32,4 +32,4 @@ jobs:
           --reports=y
       - name: Wily
         run: |
-          poetry run wily diff src/ -r HEAD^1
+          poetry run wily build all_tools/; wily diff all_tools/ -r HEAD^1
