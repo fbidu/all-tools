@@ -30,6 +30,7 @@ def test_decoder(client, name):
 
 # Loads the current OpenAPI schema. Not sure if
 # this is the better way to connect to FastAPI
+# asked on https://github.com/kiwicom/schemathesis/issues/510#issuecomment-684895527
 schema = schemathesis.from_dict(main.app.openapi())
 
 
