@@ -3,9 +3,10 @@ A lot of different tests with hypothesis
 """
 import math as m
 
-import hypothesis.strategies as st
 import hypothesis as ht
+import hypothesis.strategies as st
 import pytest
+
 
 # pylint:disable=missing-function-docstring
 @pytest.mark.xfail

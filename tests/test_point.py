@@ -1,10 +1,11 @@
 """
 Unit tests for a 3D point class
 """
-import hypothesis.strategies as st
 import hypothesis
+import hypothesis.strategies as st
 
 from all_tools.point import Point
+
 
 # pylint:disable=invalid-name
 def test_attributes():
