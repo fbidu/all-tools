@@ -41,3 +41,6 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 * Pytest Mock
 * Logassert
 * Rich (?)
+* [safety](https://github.com/pyupio/safety)
+* [bandit](https://github.com/PyCQA/bandit)
+* [dodgy](https://github.com/landscapeio/dodgy)
