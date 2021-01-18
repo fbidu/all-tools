@@ -33,3 +33,19 @@ jobs:
       - name: Wily
         run: |
           poetry run wily build all_tools/; wily diff all_tools/ -r HEAD^1
+
+      - name: Radon Raw
+        # https://radon.readthedocs.io/en/latest/intro.html#raw-metrics
+        run: poetry run radon raw all_tools
+
+      - name: Radon Cyclomatic Complexity
+        # https://radon.readthedocs.io/en/latest/intro.html#cyclomatic-complexity
+        run: poetry run radon cc all_tools
+
+      - name: Radon Maintainability Index
+        # https://radon.readthedocs.io/en/latest/intro.html#maintainability-index
+        run: poetry run radon mi all_tools
+
+      - name: Radon Halstead Metrics
+        # https://radon.readthedocs.io/en/latest/intro.html#halstead-metrics
+        run: poetry run radon hal all_tools

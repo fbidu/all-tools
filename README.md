@@ -22,6 +22,7 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 
 * **Vulture** ― Detects dead code. Runs on CI
 * [**wily**](https://wily.readthedocs.io/) ― Tracks application complexity. Currently broken on CI
+* [**radon**](https://radon.readthedocs.io/en/latest/)
 
 ### REST API Checkers
 
@@ -32,7 +33,7 @@ A repo where I plug _all_ Python code analyzers, checkers, linters, and so on th
 * **pre-commit** ― Manages git hooks
 * **ipython** ― Python REPL, but better
 
-### To Be Add
+### To Be Added
 
 * Pyre
 * Mypy
